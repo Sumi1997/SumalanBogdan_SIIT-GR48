@@ -1,0 +1,45 @@
+@media only screen and (min-width: 769px) {
+    .nav-content .arange-fa {
+        display: none;
+    }
+
+    .page-content .card .egg-img,
+    .next-to-egg {
+
+        grid-row: 1;
+
+    }
+
+    .page-content .card {
+        display: grid;
+        grid-column: 1 / span 4;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+
+
+    }
+
+    .page-content .card .next-to-egg {
+        order: -1;
+    }
+
+    .page-content .card .cherry-img {
+        height: 100%;
+    }
+
+
+
+
+    .page-content .client-testimonials {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .page-content .client-testimonials .client-title {
+        grid-column: 1 / span 3;
+    }
+
+    .page-content .image-card {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

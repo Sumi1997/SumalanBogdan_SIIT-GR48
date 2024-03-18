@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --menu-margin: 1em;
+    --menu-height: 40px;
+}
