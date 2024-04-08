@@ -5,8 +5,6 @@ let computerPick =
 let userPick =
   pickPosibilities[Math.floor(Math.random() * pickPosibilities.length)];
 
-//setInterval(play(), 1000);
-
 function play(computerPick, userPick) {
   if (computerPick == "Rock" && userPick == "Paper") {
     return "Result: User wins!";
