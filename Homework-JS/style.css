@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.page-content {
+    text-align: center;
+}
+
+
+.button {
+    padding: 10px 20px 10px 20px;
+    font-size: 16px;
+    margin: 0 10px 0 10px;
+    background-color: white;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: grey;
+}
+
+.page-content .score {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px
+}
+
+.page-content .score .user,
+.computer {
+    display: flex;
+    flex-direction: column;
+}
+
+.win-color {
+    color: green;
+}
+
+.lose-color {
+    color: red;
+}
+
+.tie-color {
+    color: orange;
+}
+
+.score {
+    font-weight: bold;
+    font-size: large;
+}
+
+#user-score {
+
+    font-size: x-large;
+}
+
+
+
+#computer-score {
+    font-size: x-large;
+}

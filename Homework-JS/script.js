@@ -1,28 +1,40 @@
-const pickPosibilities = ["Rock", "Paper", "Scissors"];
+const pick = ["rock", "paper", "scissors"];
 
-let computerPick =
-  pickPosibilities[Math.floor(Math.random() * pickPosibilities.length)];
-let userPick =
-  pickPosibilities[Math.floor(Math.random() * pickPosibilities.length)];
+let result;
 
-function play(computerPick, userPick) {
-  if (computerPick == "Rock" && userPick == "Paper") {
-    return "Result: User wins!";
-  } else if (computerPick == "Rock" && userPick == "Scissors") {
-    return "Result: Computer wins!";
-  } else if (computerPick == "Scissors" && userPick == "Rock") {
-    return "Result: User wins!";
-  } else if (computerPick == "Scissors" && userPick == "Paper") {
-    return "Result: Computer wins!";
-  } else if (computerPick == "Paper" && userPick == "Rock") {
-    return "Result: Computer wins!";
-  } else if (computerPick == "Paper" && userPick == "Scissors") {
-    return "Result: User wins!";
+const win = "You win!";
+const lose = "You lose!";
+
+let userScore = 0;
+let computerScore = 0;
+
+function play(playerPick) {
+  let computerPick = pick[Math.floor(Math.random() * pick.length)];
+  if (playerPick === computerPick) {
+    result = "It's a tie!";
+    textColor(result, playerPick, computerPick, "tie-color");
+  } else if (
+    (playerPick === "rock" && computerPick === "scissors") ||
+    (playerPick === "paper" && computerPick === "rock") ||
+    (playerPick === "scissors" && computerPick === "paper")
+  ) {
+    result = win;
+    userScore++;
+    textColor(result, playerPick, computerPick, "win-color");
   } else {
-    return "Result: Tie!";
+    result = lose;
+    computerScore++;
+    textColor(result, playerPick, computerPick, "lose-color");
   }
+
+  document.getElementById("user-score").value = userScore;
+  document.getElementById("computer-score").value = computerScore;
 }
 
-console.log("Computer choice: ", computerPick);
-console.log("User choice: ", userPick);
-console.log(play(computerPick, userPick));
+function textColor(result, playerPick, computerPick, colorClass) {
+  const resultElement = document.getElementById("result");
+  resultElement.innerHTML = `
+      <p>You chose: ${playerPick}</p>
+      <p>Computer chose: ${computerPick}</p>
+      <p class=${colorClass}>${result}</p>`;
+}

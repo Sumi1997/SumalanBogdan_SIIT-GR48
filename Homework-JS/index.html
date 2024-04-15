@@ -1,13 +1,44 @@
+</html>
 <!DOCTYPE html>
 <html>
 
 <head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 
 <body>
+    <div class="page-content">
+        <h1>Rock ~ Paper ~ Scissors</h1>
+        <p class="title">What will you choose to win?</p>
+        <div class="pick">
+            <button onclick="play('rock')" class="button">
+                <img src="rock.png" class="rock-image">
+                <figcaption>ROCK</figcaption>
+            </button>
 
+            <button onclick="play('paper')" class="button">
+                <img src="paper.png" class="paper-image">
+                <figcaption>PAPER</figcaption>
+            </button>
+            <button onclick="play('scissors')" class="button">
+                <img src="scissors.png" class="scissors-image">
+                <figcaption>SCISSORS</figcaption>
+            </button>
+        </div>
+        <div class="score">
+            <div class="user">
+                <label for="user-score">User Score</label>
+                <input type="text" id="user-score" value="0"></input>
+            </div>
+            <div class="computer">
+                <label for="computer-score">Computer Score</label>
+                <input type="text" id="computer-score" value="0"></input>
+            </div>
+        </div>
+        <div id="result"></div>
+    </div>
 </body>
-<!--  -->
 
 </html>
