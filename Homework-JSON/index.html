@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="button-container">
+        <button id="loadButton" onclick="loadQuestions()">Load questions</button>
+        <button id="loadQuestionsByDifficulty" onclick="loadQuestionsByDifficulty()">Load questions by
+            difficulty: easy</button>
+    </div>
+    <div class="input-container">
+        <input type="text" id="categoryInput" value="Geography" disabled>
+        <input type="text" id="questionTextInput" placeholder="Question Text" required>
+        <input type="text" id="correctAnswerInput" placeholder="Correct Answer" required>
+        <input type="text" id="incorrectAnswersInput" placeholder="Incorrect Answers (comma separated)" required>
+        <select id="difficultyInput">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </div>
+    <button id="insertButton" onclick="insertQuestion()">Insert question</button>
+
+    <div id="containerId"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+input {
+    width: 50%
+}
+
+select {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-right: 30px;
+}
+
+.button-container {
+    margin-bottom: 20px;
+}
+
+.button-container button {
+    margin-right: 10px;
+}
+
+.input-container {
+    margin-bottom: 10px;
+
+}
+
+
+
+.input-container input,
+.input-container button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.input-container input {
+    margin: 10px
+}
+
+
+
+#insertButton,
+#loadButton,
+#loadQuestionsByDifficulty {
+    background-color: #28a6c9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px
+}
+
+#insertButton:hover,
+#loadQuestionsByDifficulty:hover,
+#loadButton:hover {
+    background-color: #13c6b1;
+}

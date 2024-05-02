@@ -1,0 +1,145 @@
+{
+  "questions": [
+    {
+      "category": "geography",
+      "id": "1",
+      "correctAnswer": "Colorado River",
+      "incorrectAnswers": [
+        "Mississippi",
+        "Missouri",
+        "Sacramento"
+      ],
+      "question": {
+        "text": "Which river flows through the Grand Canyon?"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "category": "geography",
+      "id": "2",
+      "correctAnswer": "Vatican City",
+      "incorrectAnswers": [
+        "Monaco",
+        "Denmark",
+        "Poland"
+      ],
+      "question": {
+        "text": "What's the smallest country in Europe?"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "category": "geography",
+      "id": "3",
+      "correctAnswer": "Italy",
+      "incorrectAnswers": [
+        "Cyprus",
+        "Malta",
+        "Iceland"
+      ],
+      "question": {
+        "text": "Which of these European countries is NOT an island?"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "category": "geography",
+      "id": "4",
+      "correctAnswer": "Athens",
+      "incorrectAnswers": [
+        "Naples",
+        "Rome",
+        "Corinth"
+      ],
+      "question": {
+        "text": "The Acropolis is a popular tourist attraction. Where is it located?"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "category": "geography",
+      "id": "5",
+      "correctAnswer": "Romania",
+      "incorrectAnswers": [
+        "Poland",
+        "Ireland",
+        "France"
+      ],
+      "question": {
+        "text": "In Which Modern Day Country Would You Find The Region Known As Transylvania?"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "category": "geography",
+      "id": "6",
+      "correctAnswer": "Volga",
+      "incorrectAnswers": [
+        "Seine",
+        "Danube",
+        "Thames"
+      ],
+      "question": {
+        "text": "What's the longest river in Europe?"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "category": "geography",
+      "id": "7",
+      "correctAnswer": "Switzerland",
+      "incorrectAnswers": [
+        "Czechia",
+        "China",
+        "Japan"
+      ],
+      "question": {
+        "text": "Which region of the world uses '.ch' at the end of its web addresses?"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "category": "geography",
+      "id": "8",
+      "correctAnswer": "Sweden",
+      "incorrectAnswers": [
+        "Romania",
+        "Netherlands",
+        "Germany"
+      ],
+      "question": {
+        "text": "IKEA is known around the world for its furniture. Where was IKEA founded?"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "category": "geography",
+      "id": "9",
+      "correctAnswer": "France",
+      "incorrectAnswers": [
+        "England",
+        "Portugal",
+        "Italy"
+      ],
+      "question": {
+        "text": "Which European country has its own Disneyland?"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "category": "geography",
+      "id": "10",
+      "correctAnswer": "Bucharest",
+      "incorrectAnswers": [
+        "Budapest",
+        "Cluj-Napoca",
+        "Milano"
+      ],
+      "question": {
+        "text": "Which is the capital of Romania?"
+      },
+      "difficulty": "easy"
+    }
+    
+  ]
+}
