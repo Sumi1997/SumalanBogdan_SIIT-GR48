@@ -1,4 +1,132 @@
 {
+  "users": [
+    {
+      "username": "bogdansumalan",
+      "id": "1A",
+      "email": "bogdan.sumalan@yahoo.com",
+      "password": "parola123",
+      "usertype": "user",
+      "score": 0
+    },
+    {
+      "username": "popescu.ion",
+      "id": "1B",
+      "email": "popescu.ion@gmail.ro",
+      "password": "password123",
+      "usertype": "user",
+      "score": 0
+    },
+    {
+      "username": "mariapop",
+      "id": "1C",
+      "email": "pop.maria@gmail.ro",
+      "password": "parolamea123",
+      "usertype": "user",
+      "score": 0
+    },
+    {
+      "id": "xx",
+      "username": "tesllt",
+      "email": "test",
+      "password": "test",
+      "usertype": "user",
+      "score": 0
+    },
+    {
+      "id": "20f5",
+      "username": "tesllt",
+      "email": "test",
+      "password": "test"
+    },
+    {
+      "id": "cbdf",
+      "username": "test",
+      "email": "test@test.ro",
+      "password": "test",
+      "score": 0,
+      "usertype": "user"
+    },
+    {
+      "id": "9055",
+      "username": "ionpop",
+      "email": "ionpop@gmail.ro",
+      "password": "ionpop123",
+      "score": 0,
+      "usertype": "user"
+    },
+    {
+      "id": "f96e",
+      "username": "popion",
+      "email": "popion@gmail.ro",
+      "password": "popion",
+      "score": 0,
+      "usertype": "user"
+    },
+    {
+      "id": "cdab",
+      "username": "biancazmole",
+      "email": "biancazmole@gmail.ro",
+      "password": "parola123",
+      "score": 0,
+      "usertype": "user"
+    },
+    {
+      "id": "b88e",
+      "username": "test1",
+      "email": "test@test.ro",
+      "password": "test",
+      "score": 0,
+      "usertype": "user"
+    },
+    {
+      "id": "8102",
+      "username": "aaaaa",
+      "email": "aaaaa@aaaaaaa.vom",
+      "password": "aaaaa",
+      "score": 0,
+      "usertype": "user"
+    },
+    {
+      "id": "4bc5",
+      "username": "bbb",
+      "email": "bbb@bbb",
+      "password": "bbbb",
+      "score": 0,
+      "usertype": "user"
+    },
+    {
+      "id": "1f4a",
+      "username": "bbbb",
+      "email": "bbbbb@bbb",
+      "password": "bbbb",
+      "score": 0,
+      "usertype": "user"
+    },
+    {
+      "id": "0472",
+      "username": "nnnn",
+      "email": "nnnnn1@asdasd",
+      "password": "nnnnn",
+      "score": 0,
+      "usertype": "user"
+    },
+    {
+      "id": "0fa1",
+      "username": "bbbb",
+      "email": "bbbb@bnbb",
+      "password": "bbbb",
+      "score": 0,
+      "usertype": "user"
+    },
+    {
+      "id": "1A",
+      "username": "bogdansumalan",
+      "email": "bogdan.sumalan@yahoo.com",
+      "password": "parola123",
+      "usertype": "user",
+      "score": 1
+    }
+  ],
   "questions": [
     {
       "category": "geography",
@@ -157,14 +285,14 @@
     {
       "category": "geography",
       "id": "11",
-      "correctAnswer": "Moscow",
+      "correctAnswer": "Rome",
       "incorrectAnswers": [
-        "Volgograd",
-        "St. Petersburg",
-        "Omsk"
+        "Milano",
+        "Turin",
+        "Vicenza"
       ],
       "question": {
-        "text": "What is the capital of Russia?"
+        "text": "What is the capital of Italy?"
       },
       "difficulty": "easy"
     },
@@ -206,7 +334,7 @@
         "Netherlands"
       ],
       "question": {
-        "text": "The summit of Mont Blanc, Europe’s highest peak, is located in which country?"
+        "text": "The summit of Mont Blanc, Europe's highest peak, is located in which country?"
       },
       "difficulty": "medium"
     },
@@ -304,7 +432,7 @@
         "Cyprus"
       ],
       "question": {
-        "text": "Which European country’s flag has the most different colours on it?"
+        "text": "Which European country's flag has the most different colours on it?"
       },
       "difficulty": "easy"
     },
@@ -431,6 +559,104 @@
       ],
       "question": {
         "text": "Which country would you visit to see fjords?"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "category": "geography",
+      "id": "31",
+      "correctAnswer": "Valetta",
+      "incorrectAnswers": [
+        "Athens",
+        "Vilnius",
+        "Skopje"
+      ],
+      "question": {
+        "text": "What is the capital of Malta?"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "category": "geography",
+      "id": "32",
+      "correctAnswer": "Russia",
+      "incorrectAnswers": [
+        "Poland",
+        "Germany",
+        "Austria"
+      ],
+      "question": {
+        "text": "If you travelled to the city of Volgograd, which country would be in?"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "category": "geography",
+      "id": "33",
+      "correctAnswer": "Swedish Krona",
+      "incorrectAnswers": [
+        "RON",
+        "Euro",
+        "Dollar"
+      ],
+      "question": {
+        "text": "What is the currency of Sweden?"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "category": "geography",
+      "id": "34",
+      "correctAnswer": "Nigeria",
+      "incorrectAnswers": [
+        "Tunisia",
+        "Senegal",
+        "Kenya"
+      ],
+      "question": {
+        "text": "Which African country has the largest population?"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "category": "geography",
+      "id": "35",
+      "correctAnswer": "Marrakech",
+      "incorrectAnswers": [
+        "Cape Town",
+        "Kiev",
+        "Tirana"
+      ],
+      "question": {
+        "text": "What is the capital of Marroco?"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "category": "geography",
+      "id": "36",
+      "correctAnswer": "Peru",
+      "incorrectAnswers": [
+        "Brazil",
+        "Uruguay",
+        "Paraguay"
+      ],
+      "question": {
+        "text": "In which country would you find Machu Picchu?"
+      },
+      "difficulty": "easy"
+    },
+    {
+      "category": "geography",
+      "id": "37",
+      "correctAnswer": "Death Valley",
+      "incorrectAnswers": [
+        "California",
+        "Ontario",
+        "Texas"
+      ],
+      "question": {
+        "text": "What is the lowest point in the U.S.?"
       },
       "difficulty": "hard"
     }

@@ -1,0 +1,199 @@
+body {
+    font-family: var(--text-font);
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navcolor);
+    color: white;
+    padding: 10px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-title {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--navcolor);
+    padding: 10px;
+}
+
+.dropdown-content a {
+    color: white;
+    text-decoration: none;
+}
+
+.homebutton {
+    color: white;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.dropdown-content a:hover {
+    color: var(--red);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.score {
+    margin-left: 10px;
+    display: none;
+}
+
+
+.home {
+    margin-right: 10px;
+    text-decoration: none;
+
+
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    background-color: var(--mainbackground);
+}
+
+.hero-container .hero-image {
+    height: auto;
+    width: 100vh;
+}
+
+.hero-container .hero-text {
+    text-align: center;
+    color: black;
+    font-family: var(--text-font);
+}
+
+.hero-text button {
+    display: inline-block;
+    padding: 10px 25px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 25px;
+    font-family: var(--text-font);
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.hero-text button:hover {
+    background-color: var(--red);
+    color: white;
+    border-color: var(--buttonhover)
+}
+
+.bi:hover,
+.homebutton:hover,
+.dropdown-title:hover,
+.nav-link:hover,
+.score:hover {
+    color: var(--red);
+}
+
+.user-info .nav-link:hover {
+    color: var(--red);
+
+}
+
+.difficulty {
+    font-family: var(--text-font);
+    display: none;
+}
+
+.presentation-container {
+    text-align: center;
+    background-color: var(--mainbackground);
+    padding-top: 50px;
+    color: black;
+}
+
+p {
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.game-mode-container {
+    display: flex;
+    justify-content: space-around;
+    color: black;
+}
+
+.game-mode {
+    text-align: center;
+    width: 30%;
+    border: 2px solid #333;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+
+
+.hard-game-image,
+.easy-game-image,
+.medium-game-image {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.footer {
+    margin-top: 20px;
+    background-color: #333;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social-icons a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoQuiz</title>
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="mainpage.css">
+  <link rel="stylesheet" href="colors.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <img src="geo-logo.png" alt="Logo" class="logo">
+    </div>
+    <div class="navbar-right">
+      <div class="home">
+        <i class="bi bi-house-door-fill"><a href="mainpage.html" class="homebutton">Home</a></i>
+      </div>
+      <div class="dropdown">
+        <span data-i18n="mainPage.language" class="dropdown-title">Language</span>
+        <div class="dropdown-content">
+          <a href="#" data-i18n="mainPage.language" onclick="changeLanguage('en')">English</a>
+          <a href="#" onclick="changeLanguage('ro')">Romanian</a>
+        </div>
+      </div>
+      <div class=" user-info">
+        <span class="score">Score:</span>
+        <a href="LogIn-Form.html" class="nav-link" id="signin">Sign In</a>
+        <a href="SignUp-Form.html" class="nav-link">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+  <div class="hero-container">
+    <img src="geo-logo.png" class="hero-image">
+    <div class="hero-text">
+      <h1>Learn geography while having FUN!</h1>
+      <button onclick="chooseDifficulty()">Play</button>
+      <div class="difficulty" id="difficultySection">
+        <h4>Choose difficulty:</h4>
+        <button id="easyButton">Easy</button>
+        <button id="mediumButton">Medium</button>
+        <button id="hardButton">Hard</button>
+      </div>
+    </div>
+  </div>
+  <div class="presentation-container">
+    <h2>Discover GeoQuiz!</h2>
+    <p>Welcome to our geography gaming platform! Choose a game mode and get ready to explore the world!</p>
+    <div class="game-mode-container">
+      <div class="game-mode">
+        <h3>Easy</h3>
+        <p>Explore the world in a relaxed manner, without too many challenges.</p>
+        <img src="easy-game.png" class="easy-game-image" </div>
+
+      </div>
+      <div class="game-mode">
+        <h3>Medium</h3>
+        <p>Test your geography knowledge in a more challenging environment.</p>
+        <img src="medium-game.png" class="medium-game-image" </div>
+
+      </div>
+      <div class="game-mode">
+        <h3>Hard</h3>
+        <p>Dare to explore the world in a challenging and captivating way.</p>
+        <img src="hard-game.png" class="hard-game-image" </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+      </div>
+      <div class="footer-info">
+        <p>Sumalan Bogdan-Iulian</p>
+        <p>Scoala Informala de IT, Cluj-Napoca</p>
+        <p>Email: bogdan.sumalan@yahoo.com</p>
+        <p>Telefon: +1234567890</p>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="mainpage.js"></script>
+</body>
+
+</html>
