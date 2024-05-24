@@ -1,9 +1,13 @@
 :root {
     --red: rgb(244, 9, 104);
     --yellow: rgb(253, 234, 46);
-    --navcolor: #252020cc;
-    --mainbackground: #121010cc;
-    --buttonhover: #2d2929cc;
+    --navcolorlight: #d9ddc3;
+    --mainbackgroundlight: #c0ccb2;
+    --buttonhoverlight: #d7dab8;
+
+    --navcolor: #575353;
+    --mainbackground: #4a4545;
+    --buttonhover: #343131;
     --opacity1: 0.8;
     --opacity2: 0.6;
     --opacity3: 0.5;

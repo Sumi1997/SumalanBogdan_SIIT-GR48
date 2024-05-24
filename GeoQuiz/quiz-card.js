@@ -72,9 +72,23 @@ function submitAnswer() {
   const selectedAnswer = selectedOption.value;
   const correctAnswerElement = document.getElementById("option4");
   const correctAnswer = correctAnswerElement.textContent.trim();
+  const quizCardElement = document.querySelector(".quiz-card");
 
   if (selectedAnswer === "option4") {
     correctAnswerElement.classList.add("correct-answer");
+    quizCardElement.classList.add("correct-answer");
+    quizCardElement.classList.add("animate__animated", "animate__pulse");
+    quizCardElement.addEventListener(
+      "animationend",
+      () => {
+        quizCardElement.classList.remove(
+          "animate__animated",
+          "animate__pulse",
+          "correct-answer"
+        );
+      },
+      { once: true }
+    );
     setTimeout(
       () => correctAnswerElement.classList.remove("correct-answer"),
       500
@@ -82,11 +96,23 @@ function submitAnswer() {
     incrementScore(5);
   } else {
     selectedOption.nextElementSibling.classList.add("wrong-answer");
+    quizCardElement.classList.add("wrong-answer");
+    quizCardElement.classList.add("animate__animated", "animate__tada");
+    quizCardElement.addEventListener(
+      "animationend",
+      () => {
+        quizCardElement.classList.remove(
+          "animate__animated",
+          "animate__tada",
+          "wrong-answer"
+        );
+      },
+      { once: true }
+    );
     setTimeout(
       () => selectedOption.nextElementSibling.classList.remove("wrong-answer"),
       500
     );
-    alert("Răspunsul este incorect. Răspunsul corect este: " + correctAnswer);
   }
 
   currentQuestionIndex++;
@@ -118,6 +144,7 @@ function startNewQuiz() {
 }
 
 document.addEventListener("DOMContentLoaded", fetchQuestions);
+
 function updateScoreInDatabase() {
   const username = localStorage.getItem("username");
   const userScore = localStorage.getItem("userScore");
@@ -147,3 +174,45 @@ function updateScoreInDatabase() {
 }
 
 updateScoreInDatabase();
+
+function reloadPage() {
+  location.reload();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const username = localStorage.getItem("username");
+  const navbarRight = document.querySelector(".navbar-right");
+  const scoreSpan = document.querySelector(".score");
+
+  if (username) {
+    const signInButton = document.getElementById("signin");
+    if (signInButton) {
+      signInButton.style.display = "none";
+
+      scoreSpan.style.display = "inline-block";
+
+      let userScore = localStorage.getItem("userScore");
+
+      scoreSpan.textContent = `Score: ${userScore}`;
+      console.log(`Score: ${userScore}`);
+
+      signInButton.insertAdjacentHTML(
+        "beforebegin",
+        `<span id="userNavItem" class="nav-link">Welcome, ${username}</span>`
+      );
+
+      const signUpButton = document.querySelector(
+        ".user-info a[href='SignUp-Form.html']"
+      );
+      if (signUpButton) {
+        signUpButton.textContent = "Logout";
+        signUpButton.setAttribute("href", "#");
+        signUpButton.onclick = function () {
+          localStorage.removeItem("username");
+          localStorage.removeItem("userScore");
+          location.reload();
+        };
+      }
+    }
+  }
+});

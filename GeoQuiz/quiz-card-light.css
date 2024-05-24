@@ -1,15 +1,15 @@
 body {
     font-family: var(--text-font);
     height: 100%;
-    background-color: var(--mainbackground) !important;
+    background-color: var(--mainbackgroundlight) !important;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--navcolor);
-    color: white;
+    background-color: var(--navcolorlight);
+    color: black;
     padding: 10px;
     width: 100%;
     position: fixed;
@@ -45,7 +45,7 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--navcolor);
+    background-color: var(--navcolorlight);
     padding: 10px;
     top: 100%;
     left: 0;
@@ -53,12 +53,12 @@ body {
 }
 
 .dropdown-content a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 .homebutton {
-    color: white;
+    color: black;
     text-decoration: none;
     font-style: normal;
 }
@@ -107,7 +107,7 @@ body {
 
 .toggle-label i {
     font-size: 14px;
-    color: white;
+    color: black;
     transition: opacity 0.3s;
 }
 
@@ -126,7 +126,7 @@ body {
     left: 4px;
     width: 16px;
     height: 16px;
-    background-color: white;
+    background-color: black;
     border-radius: 50%;
     transition: transform 0.3s;
     transform: translateY(-50%);
@@ -138,7 +138,7 @@ body {
 
 
 .dropdown-content a:hover {
-    color: var(--red);
+    color: var(--yellow);
 }
 
 .dropdown:hover .dropdown-content {
@@ -146,7 +146,7 @@ body {
 }
 
 .nav-link {
-    color: white;
+    color: black;
     text-decoration: none;
     margin-left: 10px;
     margin-right: 10px;
@@ -173,11 +173,11 @@ body {
 .dropdown-title:hover,
 .nav-link:hover,
 .score:hover {
-    color: var(--red);
+    color: var(--yellow);
 }
 
 .user-info .nav-link:hover {
-    color: var(--red);
+    color: var(--yellow);
 }
 
 .content {
@@ -185,8 +185,8 @@ body {
 }
 
 .quiz-card {
-    background-color: var(--buttonhover);
-    color: white;
+    background-color: var(--buttonhoverlight);
+    color: black;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -211,8 +211,8 @@ body {
 }
 
 .quiz-button:hover {
-    background-color: var(--red);
-    color: white;
+    background-color: var(--yellow);
+    color: black;
 }
 
 label {
@@ -232,7 +232,7 @@ input[type="radio"] {
 #score {
     margin-top: 20px;
     font-size: 18px;
-    color: white;
+    color: black;
 }
 
 .correct-answer {
@@ -279,12 +279,12 @@ input[type="radio"] {
     left: 40px;
     font-size: 64px;
     text-decoration: none;
-    color: var(--red);
+    color: var(--yellow);
     font-weight: bold;
 }
 
 .reload-button {
-    color: var(--red);
+    color: var(--yellow);
     position: fixed;
     bottom: 20px;
     left: 50%;

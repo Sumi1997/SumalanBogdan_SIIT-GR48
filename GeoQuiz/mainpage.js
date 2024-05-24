@@ -103,3 +103,21 @@ document.addEventListener("DOMContentLoaded", function () {
     setDifficultyAndRedirect("hard");
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("toggle");
+  const changeTheme = document.getElementById("changeTheme");
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) changeTheme.setAttribute("href", savedTheme);
+  toggle.checked = savedTheme === "mainpage-light.css";
+  toggle.addEventListener("change", function () {
+    if (toggle.checked) {
+      changeTheme.setAttribute("href", "mainpage-light.css");
+      localStorage.setItem("theme", "mainpage-light.css");
+    } else {
+      changeTheme.setAttribute("href", "mainpage.css");
+      localStorage.setItem("theme", "mainpage.css");
+    }
+  });
+});

@@ -7,8 +7,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--navcolor);
-    color: white;
+    background-color: var(--navcolorlight);
+    color: black;
     padding: 10px;
 }
 
@@ -38,17 +38,17 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--navcolor);
+    background-color: var(--navcolorlight);
     padding: 10px;
 }
 
 .dropdown-content a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 .homebutton {
-    color: white;
+    color: black;
     text-decoration: none;
     font-style: normal;
 }
@@ -83,7 +83,7 @@ body {
     display: block;
     width: 40px;
     height: 20px;
-    background-color: #ccc;
+    background-color: #5f5d5d;
     border-radius: 10px;
     position: relative;
     cursor: pointer;
@@ -112,7 +112,7 @@ body {
 
 
 .dropdown-content a:hover {
-    color: var(--red);
+    color: var(--yellow);
 }
 
 .dropdown:hover .dropdown-content {
@@ -120,7 +120,7 @@ body {
 }
 
 .nav-link {
-    color: white;
+    color: black;
     text-decoration: none;
     margin-left: 10px;
     margin-right: 10px;
@@ -150,7 +150,7 @@ body {
     align-items: center;
     flex-direction: column;
     width: auto;
-    background-color: var(--mainbackground);
+    background-color: var(--mainbackgroundlight);
 }
 
 .hero-container .hero-image {
@@ -178,9 +178,9 @@ body {
 }
 
 .hero-text button:hover {
-    background-color: var(--red);
-    color: white;
-    border-color: var(--buttonhover)
+    background-color: var(--yellow);
+    color: black;
+    border-color: var(--buttonhoverlight)
 }
 
 .bi:hover,
@@ -188,11 +188,11 @@ body {
 .dropdown-title:hover,
 .nav-link:hover,
 .score:hover {
-    color: var(--red);
+    color: var(--yellow);
 }
 
 .user-info .nav-link:hover {
-    color: var(--red);
+    color: var(--yellow);
 
 }
 
@@ -203,7 +203,7 @@ body {
 
 .presentation-container {
     text-align: center;
-    background-color: var(--mainbackground);
+    background-color: var(--mainbackgroundlight);
     padding-top: 50px;
     color: black;
 }
@@ -241,7 +241,7 @@ p {
 
 .footer {
     margin-top: 20px;
-    background-color: var(--navbar);
+    background-color: var(--buttonhoverlight);
     padding: 20px 0;
     text-align: center;
 }
