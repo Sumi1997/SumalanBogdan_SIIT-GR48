@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 
 <body>
@@ -19,9 +18,10 @@
     <div class="navbar-left">
       <img src="geo-logo.png" alt="Logo" class="logo">
     </div>
-    <div class="navbar-right">
+    <button class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+    <div class="navbar-right" id="navbarRight">
       <div class="home">
-        <i class="bi bi-house-door-fill"><a href="mainpage.html" class="homebutton">Home</a></i>
+        <i class="bi bi-house-door-fill"><a href="mainpage.html" class="homebutton" data-i18n="mainPage.home"></a></i>
       </div>
       <div class="toggle-theme">
         <div class="moon">
@@ -29,80 +29,81 @@
         </div>
         <div class="toggle-switch">
           <input type="checkbox" id="toggle" class="toggle-input">
-          <label for="toggle" class="toggle-label">
-          </label>
-
+          <label for="toggle" class="toggle-label"></label>
         </div>
         <div class="sun">
           <i class="fas fa-sun"></i>
         </div>
       </div>
-
       <div class="dropdown">
-        <span data-i18n="mainPage.language" class="dropdown-title">Language</span>
+        <span data-i18n="mainPage.language" class="dropdown-title"></span>
         <div class="dropdown-content">
-          <a href="#" data-i18n="mainPage.language" onclick="changeLanguage('en')">English</a>
-          <a href="#" onclick="changeLanguage('ro')">Romanian</a>
+          <a href="#" data-i18n="mainPage.language.english" onclick="changeLanguage('en')"></a>
+          <a href="#" onclick="changeLanguage('ro')" data-i18n="mainPage.language.romanian"></a>
         </div>
       </div>
-      <div class=" user-info">
-        <span class="score">Score:</span>
-        <a href="LogIn-Form.html" class="nav-link" id="signin">Sign In</a>
-        <a href="SignUp-Form.html" class="nav-link">Sign Up</a>
+      <div class="user-info">
+        <span class="score" data-i18n="mainPage.navScore"></span>
+        <span class="score-value"></span>
+        <span id="userNavItem" class="nav-link" data-i18n="mainPage.welcome">Welcome, ${username}</span>
+        <span id="userName" class="nav-link"></span>
+        <a href="LogIn-Form.html" class="nav-link">Log Out</a>
+
       </div>
     </div>
   </nav>
   <div class="hero-container">
     <img src="geo-logo.png" class="hero-image">
     <div class="hero-text">
-      <h1>Learn geography while having FUN!</h1>
-      <button onclick="chooseDifficulty()">Play</button>
+      <h1 data-i18n="mainPage.h1.banner"></h1>
+      <button onclick="chooseDifficulty()" data-i18n="mainPage.play"></button>
       <div class="difficulty" id="difficultySection">
-        <h4>Choose difficulty:</h4>
-        <button id="easyButton">Easy</button>
-        <button id="mediumButton">Medium</button>
-        <button id="hardButton">Hard</button>
+        <h4 data-i18n="mainPage.difficulty"></h4>
+        <button id="easyButton" data-i18n="mainPage.easy"></button>
+        <button id="mediumButton" data-i18n="mainPage.medium"></button>
+        <button id="hardButton" data-i18n="mainPage.hard"></button>
       </div>
     </div>
   </div>
   <div class="presentation-container">
-    <h2>Discover GeoQuiz!</h2>
-    <p>Welcome to our geography gaming platform! Choose a game mode and get ready to explore the world!</p>
-    <div class="game-mode-container">
-      <div class="game-mode">
-        <h3>Easy</h3>
-        <p>Explore the world in a relaxed manner, without too many challenges.</p>
-        <img src="easy-game.png" class="easy-game-image" </div>
-
-      </div>
-      <div class="game-mode">
-        <h3>Medium</h3>
-        <p>Test your geography knowledge in a more challenging environment.</p>
-        <img src="medium-game.png" class="medium-game-image" </div>
-
-      </div>
-      <div class="game-mode">
-        <h3>Hard</h3>
-        <p>Dare to explore the world in a challenging and captivating way.</p>
-        <img src="hard-game.png" class="hard-game-image" </div>
+    <h2 data-i18n="mainPage.discover"></h2>
+    <p data-i18n="mainPage.discover.p"></p>
+    <div class="container">
+      <div class="row game-mode-container">
+        <div class="col-md-4 game-mode">
+          <h3 data-i18n="mainPage.presentation.easy"></h3>
+          <p data-i18n="mainPage.presentation.easy.p"></p>
+          <img src="easy-game.png" class="img-fluid easy-game-image">
+        </div>
+        <div class="col-md-4 game-mode">
+          <h3 data-i18n="mainPage.presentation.medium"></h3>
+          <p data-i18n="mainPage.presentation.medium.p">
+          </p>
+          <img src="medium-game.png" class="img-fluid medium-game-image">
+        </div>
+        <div class="col-md-4 game-mode">
+          <h3 data-i18n="mainPage.presentation.hard"></h3>
+          <p data-i18n="mainPage.presentation.hard.p">
+          </p>
+          <img src="hard-game.png" class="img-fluid hard-game-image">
+        </div>
       </div>
     </div>
-    <footer class="footer">
-      <div class="social-icons">
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-twitter"></i></a>
-        <a href="#"><i class="bi bi-instagram"></i></a>
-      </div>
-      <div class="footer-info">
-        <p>Sumalan Bogdan-Iulian</p>
-        <p>Scoala Informala de IT, Cluj-Napoca</p>
-        <p>Email: bogdan.sumalan@yahoo.com</p>
-        <p>Telefon: +1234567890</p>
-      </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <script src="mainpage.js"></script>
+  </div>
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="#"><i class="bi bi-facebook"></i></a>
+      <a href="#"><i class="bi bi-twitter"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+    </div>
+    <div class="footer-info">
+      <p>Sumalan Bogdan-Iulian</p>
+      <p>Scoala Informala de IT, Cluj-Napoca</p>
+      <p>Email: bogdan.sumalan@yahoo.com</p>
+      <p data-i18n="mainPage.phone"></p>
+    </div>
+  </footer>
+  <script src="mainpage.js"></script>
 </body>
 
 </html>

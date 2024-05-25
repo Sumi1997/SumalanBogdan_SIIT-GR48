@@ -59,7 +59,7 @@
       "username": "popion",
       "email": "popion@gmail.ro",
       "password": "popion",
-      "score": 0,
+      "score": 20580,
       "usertype": "user"
     },
     {
@@ -132,10 +132,11 @@
       "category": "geography",
       "id": "1",
       "correctAnswer": "Colorado River",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Mississippi",
         "Missouri",
-        "Sacramento"
+        "Sacramento",
+        "Colorado River"
       ],
       "question": {
         "text": "Which river flows through the Grand Canyon?"
@@ -146,10 +147,11 @@
       "category": "geography",
       "id": "2",
       "correctAnswer": "Vatican City",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Monaco",
         "Denmark",
-        "Poland"
+        "Poland",
+        "Vatican City"
       ],
       "question": {
         "text": "What's the smallest country in Europe?"
@@ -160,10 +162,11 @@
       "category": "geography",
       "id": "3",
       "correctAnswer": "Italy",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Cyprus",
         "Malta",
-        "Iceland"
+        "Iceland",
+        "Italy"
       ],
       "question": {
         "text": "Which of these European countries is NOT an island?"
@@ -174,10 +177,11 @@
       "category": "geography",
       "id": "4",
       "correctAnswer": "Athens",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Naples",
         "Rome",
-        "Corinth"
+        "Corinth",
+        "Athens"
       ],
       "question": {
         "text": "The Acropolis is a popular tourist attraction. Where is it located?"
@@ -188,10 +192,11 @@
       "category": "geography",
       "id": "5",
       "correctAnswer": "Romania",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Poland",
         "Ireland",
-        "France"
+        "France",
+        "Romania"
       ],
       "question": {
         "text": "In Which Modern Day Country Would You Find The Region Known As Transylvania?"
@@ -202,10 +207,11 @@
       "category": "geography",
       "id": "6",
       "correctAnswer": "Volga",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Seine",
         "Danube",
-        "Thames"
+        "Thames",
+        "Volga"
       ],
       "question": {
         "text": "What's the longest river in Europe?"
@@ -216,10 +222,11 @@
       "category": "geography",
       "id": "7",
       "correctAnswer": "Switzerland",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Czechia",
         "China",
-        "Japan"
+        "Japan",
+        "Switzerland"
       ],
       "question": {
         "text": "Which region of the world uses '.ch' at the end of its web addresses?"
@@ -230,10 +237,11 @@
       "category": "geography",
       "id": "8",
       "correctAnswer": "Sweden",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Romania",
         "Netherlands",
-        "Germany"
+        "Germany",
+        "Sweden"
       ],
       "question": {
         "text": "IKEA is known around the world for its furniture. Where was IKEA founded?"
@@ -244,10 +252,11 @@
       "category": "geography",
       "id": "9",
       "correctAnswer": "France",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "England",
         "Portugal",
-        "Italy"
+        "Italy",
+        "France"
       ],
       "question": {
         "text": "Which European country has its own Disneyland?"
@@ -258,10 +267,11 @@
       "category": "geography",
       "id": "10",
       "correctAnswer": "Bucharest",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Budapest",
         "Cluj-Napoca",
-        "Milano"
+        "Milano",
+        "Bucharest"
       ],
       "question": {
         "text": "Which is the capital of Romania?"
@@ -272,10 +282,11 @@
       "category": "geography",
       "id": "11",
       "correctAnswer": "Moscow",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Volgograd",
         "ST. Petersburg",
-        "Omsk"
+        "Omsk",
+        "Moscow"
       ],
       "question": {
         "text": "What is the capital of Russia?"
@@ -286,10 +297,11 @@
       "category": "geography",
       "id": "11",
       "correctAnswer": "Rome",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Milano",
         "Turin",
-        "Vicenza"
+        "Vicenza",
+        "Rome"
       ],
       "question": {
         "text": "What is the capital of Italy?"
@@ -300,10 +312,11 @@
       "category": "geography",
       "id": "12",
       "correctAnswer": "Academeia",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Parthenon",
         "Erechteum",
-        "Propylaea"
+        "Propylaea",
+        "Academeia"
       ],
       "question": {
         "text": "Which of the following is not on the Acropolis in Athens?"
@@ -314,10 +327,11 @@
       "category": "geography",
       "id": "13",
       "correctAnswer": "Portugal",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Spain",
         "Germany",
-        "Norway"
+        "Norway",
+        "Portugal"
       ],
       "question": {
         "text": "The Madeira Islands in the North Atlantic Ocean belong to which country?"
@@ -328,10 +342,11 @@
       "category": "geography",
       "id": "14",
       "correctAnswer": "France",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Germany",
         "Poland",
-        "Netherlands"
+        "Netherlands",
+        "France"
       ],
       "question": {
         "text": "The summit of Mont Blanc, Europe's highest peak, is located in which country?"
@@ -342,10 +357,11 @@
       "category": "geography",
       "id": "15",
       "correctAnswer": "Poland",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Estonia",
         "Latvia",
-        "Romania"
+        "Romania",
+        "Poland"
       ],
       "question": {
         "text": "In what country is Gdańsk located?"
@@ -356,10 +372,11 @@
       "category": "geography",
       "id": "16",
       "correctAnswer": "Mountain",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Valley",
         "Sea",
-        "Pig"
+        "Pig",
+        "Mountain"
       ],
       "question": {
         "text": "What does the word Balkan mean in Turkish?"
@@ -370,10 +387,11 @@
       "category": "geography",
       "id": "17",
       "correctAnswer": "Iberian and Balkan",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Baja and Malay",
         "Iberian and Baja",
-        "Malay and Iberian"
+        "Malay and Iberian",
+        "Iberian and Balkan"
       ],
       "question": {
         "text": "Besides the Italian Peninsula, what are the other two great peninsulas of southern Europe?"
@@ -384,10 +402,11 @@
       "category": "geography",
       "id": "18",
       "correctAnswer": "Mount Etna",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Mount Vesuvius",
         "Klyuchevskaya Volcano",
-        "Eyjafjallajokull"
+        "Eyjafjallajokull",
+        "Mount Etna"
       ],
       "question": {
         "text": "Which peak is the highest active volcano in Europe?"
@@ -398,10 +417,11 @@
       "category": "geography",
       "id": "19",
       "correctAnswer": "Russia",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Ukraine",
         "France",
-        "Germany"
+        "Germany",
+        "Russia"
       ],
       "question": {
         "text": "Which is Europe's largest country?"
@@ -412,10 +432,11 @@
       "category": "geography",
       "id": "20",
       "correctAnswer": "Reykjavik",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Berlin",
         "Oslo",
-        "Madrid"
+        "Madrid",
+        "Reykjavik"
       ],
       "question": {
         "text": "Which is the northernmost capital city in Europe?"
@@ -426,10 +447,11 @@
       "category": "geography",
       "id": "21",
       "correctAnswer": "Croatia",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "North Macedonia",
         "Portugal",
-        "Cyprus"
+        "Cyprus",
+        "Croatia"
       ],
       "question": {
         "text": "Which European country's flag has the most different colours on it?"
@@ -440,10 +462,11 @@
       "category": "geography",
       "id": "22",
       "correctAnswer": "German",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "French",
         "Spanish",
-        "Italian"
+        "Italian",
+        "German"
       ],
       "question": {
         "text": "Which of these languages is the most commonly spoken first language in Europe?"
@@ -454,10 +477,11 @@
       "category": "geography",
       "id": "23",
       "correctAnswer": "Croatia",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Bulgaria",
         "Romania",
-        "Italy"
+        "Italy",
+        "Croatia"
       ],
       "question": {
         "text": "Which of these countries joined the European Union most recently?"
@@ -468,10 +492,11 @@
       "category": "geography",
       "id": "24",
       "correctAnswer": "Scandinavia",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "The Low Countries",
         "Iberia",
-        "The Ruhr"
+        "The Ruhr",
+        "Scandinavia"
       ],
       "question": {
         "text": "Norway, Sweden and Finland are part of which region?"
@@ -482,10 +507,11 @@
       "category": "geography",
       "id": "25",
       "correctAnswer": "Seine",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Garonne",
         "Loire",
-        "Rhone"
+        "Rhone",
+        "Seine"
       ],
       "question": {
         "text": "Paris stands on which river?"
@@ -496,10 +522,11 @@
       "category": "geography",
       "id": "26",
       "correctAnswer": "France",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Belgium",
         "Germany",
-        "Poland"
+        "Poland",
+        "France"
       ],
       "question": {
         "text": "The Massif Central is a mountain range in which country?"
@@ -510,10 +537,11 @@
       "category": "geography",
       "id": "27",
       "correctAnswer": "Paris",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Vienna",
         "Budapest",
-        "Belgrade"
+        "Belgrade",
+        "Paris"
       ],
       "question": {
         "text": "Which city does not lie on the River Danube?"
@@ -524,10 +552,11 @@
       "category": "geography",
       "id": "28",
       "correctAnswer": "Peninsula",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Country",
         "Island",
-        "Republic"
+        "Republic",
+        "Peninsula"
       ],
       "question": {
         "text": "Europe is best described by which word?"
@@ -538,10 +567,11 @@
       "category": "geography",
       "id": "29",
       "correctAnswer": "Mediterranean Sea",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "North Sea",
         "Pacific Ocean",
-        "Red Sea"
+        "Red Sea",
+        "Mediterranean Sea"
       ],
       "question": {
         "text": "Europe is separated from North Africa by which sea?"
@@ -552,10 +582,11 @@
       "category": "geography",
       "id": "30",
       "correctAnswer": "Norway",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "North Macedonia",
         "Grece",
-        "England"
+        "England",
+        "Norway"
       ],
       "question": {
         "text": "Which country would you visit to see fjords?"
@@ -566,10 +597,11 @@
       "category": "geography",
       "id": "31",
       "correctAnswer": "Valetta",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Athens",
         "Vilnius",
-        "Skopje"
+        "Skopje",
+        "Valetta"
       ],
       "question": {
         "text": "What is the capital of Malta?"
@@ -580,10 +612,11 @@
       "category": "geography",
       "id": "32",
       "correctAnswer": "Russia",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Poland",
         "Germany",
-        "Austria"
+        "Austria",
+        "Russia"
       ],
       "question": {
         "text": "If you travelled to the city of Volgograd, which country would be in?"
@@ -594,10 +627,11 @@
       "category": "geography",
       "id": "33",
       "correctAnswer": "Swedish Krona",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "RON",
         "Euro",
-        "Dollar"
+        "Dollar",
+        "Swedish Krona"
       ],
       "question": {
         "text": "What is the currency of Sweden?"
@@ -608,10 +642,11 @@
       "category": "geography",
       "id": "34",
       "correctAnswer": "Nigeria",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Tunisia",
         "Senegal",
-        "Kenya"
+        "Kenya",
+        "Nigeria"
       ],
       "question": {
         "text": "Which African country has the largest population?"
@@ -622,10 +657,11 @@
       "category": "geography",
       "id": "35",
       "correctAnswer": "Marrakech",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Cape Town",
         "Kiev",
-        "Tirana"
+        "Tirana",
+        "Marrakech"
       ],
       "question": {
         "text": "What is the capital of Marroco?"
@@ -636,10 +672,11 @@
       "category": "geography",
       "id": "36",
       "correctAnswer": "Peru",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "Brazil",
         "Uruguay",
-        "Paraguay"
+        "Paraguay",
+        "Peru"
       ],
       "question": {
         "text": "In which country would you find Machu Picchu?"
@@ -650,10 +687,11 @@
       "category": "geography",
       "id": "37",
       "correctAnswer": "Death Valley",
-      "incorrectAnswers": [
+      "possibleAnswers": [
         "California",
         "Ontario",
-        "Texas"
+        "Texas",
+        "Death Valley"
       ],
       "question": {
         "text": "What is the lowest point in the U.S.?"

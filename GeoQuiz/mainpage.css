@@ -1,7 +1,8 @@
 body {
     font-family: var(--text-font);
-
+    background-color: var(--mainbackground) !important;
 }
+
 
 .navbar {
     display: flex;
@@ -25,6 +26,8 @@ body {
 .navbar-right {
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 0
 }
 
 .dropdown {
@@ -134,7 +137,6 @@ body {
 
 .score {
     margin-left: 10px;
-    display: none;
 }
 
 
@@ -151,11 +153,14 @@ body {
     flex-direction: column;
     width: auto;
     background-color: var(--mainbackground);
+
 }
 
 .hero-container .hero-image {
+    max-width: 40%;
     height: auto;
-    width: 100vh;
+    width: auto;
+    margin: 0 auto;
 }
 
 .hero-container .hero-text {
@@ -206,6 +211,7 @@ body {
     background-color: var(--mainbackground);
     padding-top: 50px;
     color: black;
+
 }
 
 p {
@@ -215,7 +221,7 @@ p {
 
 .game-mode-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     color: black;
 }
 
@@ -241,7 +247,7 @@ p {
 
 .footer {
     margin-top: 20px;
-    background-color: var(--navbar);
+    background-color: var(--navcolor);
     padding: 20px 0;
     text-align: center;
 }
@@ -254,4 +260,29 @@ p {
 
 .footer-info p {
     margin: 5px 0;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar-right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-right.active {
+        display: flex;
+    }
 }

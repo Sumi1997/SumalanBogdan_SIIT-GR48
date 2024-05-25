@@ -1,11 +1,12 @@
 const apiUrlQuestions = "http://localhost:3000/users";
 
 function updateContent(langData) {
-  console.log("Lang data:::", langData);
-  document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const key = element.getAttribute("data-i18n");
-    element.textContent = langData[key];
-  });
+  if (langData && Object.keys(langData).length) {
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      const key = element.getAttribute("data-i18n");
+      element.textContent = langData[key];
+    });
+  }
 }
 
 async function fetchLanguageData(lang) {
@@ -33,6 +34,8 @@ async function changeLanguage(lang) {
   updateContent(langData);
 }
 
+changeLanguage("ro");
+
 function chooseDifficulty() {
   var difficultySection = document.getElementById("difficultySection");
   difficultySection.style.display = "block";
@@ -45,40 +48,12 @@ function setDifficultyAndRedirect(difficulty) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const username = localStorage.getItem("username");
-  const navbarRight = document.querySelector(".navbar-right");
-  const scoreSpan = document.querySelector(".score");
+  const userNameElement = document.getElementById("userName");
+  userNameElement.innerText = username;
 
-  if (username) {
-    const signInButton = document.getElementById("signin");
-    if (signInButton) {
-      signInButton.style.display = "none";
-
-      scoreSpan.style.display = "inline-block";
-
-      let userScore = localStorage.getItem("userScore");
-
-      scoreSpan.textContent = `Score: ${userScore}`;
-      console.log(`Score: ${userScore}`);
-
-      signInButton.insertAdjacentHTML(
-        "beforebegin",
-        `<span id="userNavItem" class="nav-link">Welcome, ${username}</span>`
-      );
-
-      const signUpButton = document.querySelector(
-        ".user-info a[href='SignUp-Form.html']"
-      );
-      if (signUpButton) {
-        signUpButton.textContent = "Logout";
-        signUpButton.setAttribute("href", "#");
-        signUpButton.onclick = function () {
-          localStorage.removeItem("username");
-          localStorage.removeItem("userScore");
-          location.reload();
-        };
-      }
-    }
-  }
+  const scoreValue = document.querySelector(".score-value");
+  let userScore = localStorage.getItem("userScore");
+  scoreValue.textContent = userScore;
 
   const playButton = document.querySelector(".hero-text button");
   const difficultySection = document.getElementById("difficultySection");
@@ -108,9 +83,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("toggle");
   const changeTheme = document.getElementById("changeTheme");
 
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) changeTheme.setAttribute("href", savedTheme);
-  toggle.checked = savedTheme === "mainpage-light.css";
+  // Setează starea checkbox-ului la încărcarea paginii
+  const savedToggleState = localStorage.getItem("toggleState");
+  toggle.checked = savedToggleState === "true"; // Convertim string-ul la boolean
+
+  if (toggle.checked) {
+    changeTheme.setAttribute("href", "mainpage-light.css");
+  } else {
+    changeTheme.setAttribute("href", "mainpage.css");
+  }
+
   toggle.addEventListener("change", function () {
     if (toggle.checked) {
       changeTheme.setAttribute("href", "mainpage-light.css");
@@ -119,5 +101,16 @@ document.addEventListener("DOMContentLoaded", function () {
       changeTheme.setAttribute("href", "mainpage.css");
       localStorage.setItem("theme", "mainpage.css");
     }
+
+    localStorage.setItem("toggleState", toggle.checked);
   });
 });
+
+function toggleMenu() {
+  var element = document.getElementById("navbarRight");
+  if (element.classList.contains("active")) {
+    element.classList.remove("active");
+  } else {
+    element.classList.add("active");
+  }
+}

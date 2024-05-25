@@ -1,5 +1,6 @@
 body {
     font-family: var(--text-font);
+    background-color: var(--mainbackgroundlight) !important;
 
 }
 
@@ -134,7 +135,6 @@ body {
 
 .score {
     margin-left: 10px;
-    display: none;
 }
 
 
@@ -254,4 +254,29 @@ p {
 
 .footer-info p {
     margin: 5px 0;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar-right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-right.active {
+        display: flex;
+    }
 }

@@ -2,7 +2,50 @@ const apiUrlQuestions = "http://localhost:3000/questions";
 
 const NUM_QUESTIONS = 5;
 let currentQuestionIndex = 0;
+let currentCorrectAnswer = "";
 let questions = [];
+let currentScore = 0;
+
+window.addEventListener("beforeunload", function (event) {
+  event.preventDefault();
+  event.returnValue = "";
+});
+
+function updateContent(langData) {
+  if (langData && Object.keys(langData).length) {
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      const key = element.getAttribute("data-i18n");
+      element.textContent = langData[key];
+    });
+  }
+}
+
+async function fetchLanguageData(lang) {
+  console.log(lang, "lang in fetchLangData");
+  const response = await fetch(`languages/${lang}.json`);
+  if (response.ok) {
+    const langData = await response.json();
+    console.log(langData, "res.okk");
+    return langData;
+  } else {
+    console.error("Eroare la încărcarea datelor de limbă:", response.status);
+  }
+}
+
+function setLanguagePreference(lang) {
+  localStorage.setItem("language", lang);
+  console.log("Language preference set to:", lang);
+}
+
+async function changeLanguage(lang) {
+  console.log("selected language::", lang);
+  setLanguagePreference(lang);
+
+  const langData = await fetchLanguageData(lang);
+  updateContent(langData);
+}
+
+changeLanguage("ro");
 
 function getSelectedDifficulty() {
   return localStorage.getItem("selectedDifficulty");
@@ -42,19 +85,28 @@ function fetchQuestions() {
 
   xhr.send();
 }
-
 function loadQuestion(questionData) {
   const questionElement = document.getElementById("question");
-  const option1Element = document.getElementById("option1");
-  const option2Element = document.getElementById("option2");
-  const option3Element = document.getElementById("option3");
-  const option4Element = document.getElementById("option4");
-
   questionElement.textContent = questionData.question.text;
-  option1Element.textContent = questionData.incorrectAnswers[0];
-  option2Element.textContent = questionData.incorrectAnswers[1];
-  option3Element.textContent = questionData.incorrectAnswers[2];
-  option4Element.textContent = questionData.correctAnswer;
+
+  const answersElement = document.getElementById("answersContainer");
+  answersElement.innerText = "";
+  const shuffledAnswers = shuffleArray(questionData.possibleAnswers);
+  currentCorrectAnswer = questionData.correctAnswer;
+  console.log(shuffledAnswers, "shuffled qqqqq");
+
+  shuffledAnswers.forEach((question, index) => {
+    answersElement.insertAdjacentHTML(
+      "afterbegin",
+      `
+      <label>
+    <input type="radio" name="option" value="${question}">
+    <span id="option${index}">${question}</span>
+</label>
+<br>
+      `
+    );
+  });
 
   document
     .querySelectorAll('input[name="option"]')
@@ -70,14 +122,13 @@ function submitAnswer() {
   }
 
   const selectedAnswer = selectedOption.value;
-  const correctAnswerElement = document.getElementById("option4");
-  const correctAnswer = correctAnswerElement.textContent.trim();
   const quizCardElement = document.querySelector(".quiz-card");
 
-  if (selectedAnswer === "option4") {
-    correctAnswerElement.classList.add("correct-answer");
+  if (selectedAnswer === currentCorrectAnswer) {
+    incrementScore(5);
+    selectedOption.classList.add("correct-answer");
     quizCardElement.classList.add("correct-answer");
-    quizCardElement.classList.add("animate__animated", "animate__pulse");
+    quizCardElement.classList.add("animate_animated", "animate_pulse");
     quizCardElement.addEventListener(
       "animationend",
       () => {
@@ -90,10 +141,10 @@ function submitAnswer() {
       { once: true }
     );
     setTimeout(
-      () => correctAnswerElement.classList.remove("correct-answer"),
+      () =>
+        selectedOption.nextElementSibling.classList.remove("correct-answer"),
       500
     );
-    incrementScore(5);
   } else {
     selectedOption.nextElementSibling.classList.add("wrong-answer");
     quizCardElement.classList.add("wrong-answer");
@@ -120,99 +171,127 @@ function submitAnswer() {
     loadQuestion(questions[currentQuestionIndex]);
   } else {
     const scoreSummaryElement = document.getElementById("score-summary");
-    const scoreElement = document.getElementById("score");
-    scoreSummaryElement.textContent = `Felicitari! Scor final: ${parseInt(
-      scoreElement.textContent.split(" ")[1]
-    )}`;
+
+    scoreSummaryElement.textContent = `Felicitari! Scor final: ${currentScore}`;
 
     document.getElementById("submitBtn").style.display = "none";
-    document.getElementById("reloadBtn").style.display = "block";
+    // document.getElementById("reloadBtn").style.display = "block";
+    updateScoreInDatabase();
   }
 }
 
 function incrementScore(points) {
   const scoreElement = document.getElementById("score");
-  let currentScore = parseInt(scoreElement.textContent.split(" ")[1]);
+
   currentScore += points;
   scoreElement.textContent = `Score: ${currentScore}`;
-
-  localStorage.setItem("userScore", currentScore);
 }
 
-function startNewQuiz() {
-  window.location.reload();
-}
+// function startNewQuiz() {
+//   window.location.reload();
+// }
 
 document.addEventListener("DOMContentLoaded", fetchQuestions);
 
 function updateScoreInDatabase() {
-  const username = localStorage.getItem("username");
-  const userScore = localStorage.getItem("userScore");
-
-  if (!username) {
-    console.error("Utilizatorul curent nu este setat în localStorage!");
-    return;
-  }
-
-  const xhr = new XMLHttpRequest();
-  xhr.open("PUT", `http://localhost:3000/users/${username}`, true);
-  xhr.setRequestHeader("Content-Type", "application/json");
-
-  xhr.onload = function () {
-    if (xhr.status === 200) {
+  const userId = localStorage.getItem("userId");
+  const xhrPatch = new XMLHttpRequest();
+  xhrPatch.open("PATCH", `http://localhost:3000/users/${userId}`, true);
+  xhrPatch.setRequestHeader("Content-Type", "application/json");
+  xhrPatch.onload = function () {
+    if (xhrPatch.status === 200) {
       console.log("Scorul a fost actualizat cu succes în baza de date!");
     } else {
-      console.error("Eroare la actualizarea scorului:", xhr.statusText);
+      console.error("Eroare la actualizarea scorului:", xhrPatch.statusText);
     }
   };
-
-  xhr.onerror = function () {
+  xhrPatch.onerror = function () {
     console.error("Eroare la conexiune!");
   };
 
-  xhr.send(JSON.stringify({ score: userScore }));
-}
+  // Actualizează scorul în localStorage
+  let previousScore = localStorage.getItem("userScore");
+  const newScore = +previousScore + currentScore;
+  localStorage.setItem("userScore", newScore);
+  xhrPatch.send(JSON.stringify({ score: newScore }));
 
-updateScoreInDatabase();
+  // const username = localStorage.getItem("username");
+  // const userId = localStorage.getItem("userId");
+
+  // if (!username) {
+  //   console.error("Utilizatorul curent nu este setat în localStorage!");
+  //   return;
+  // }
+
+  // const xhrGet = new XMLHttpRequest();
+  // xhrGet.open("GET", `http://localhost:3000/users/${userId}`, true);
+  // xhrGet.onload = function () {
+  //   if (xhrGet.status === 200) {
+  //     const user = JSON.parse(xhrGet.responseText);
+  //     console.log(user, "userrrrrrrrrr");
+  //     const previousScore = user.score;
+  //     const newScore = previousScore + currentScore;
+
+  //   } else {
+  //     console.error(
+  //       "Eroare la obținerea scorului existent:",
+  //       xhrGet.statusText
+  //     );
+  //   }
+  // };
+  // xhrGet.onerror = function () {
+  //   console.error("Eroare la conexiune la obținerea scorului!");
+  // };
+  // xhrGet.send();
+}
 
 function reloadPage() {
   location.reload();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("toggle");
+  const quizCardTheme = document.getElementById("quizCardTheme");
+
+  const savedToggleState = localStorage.getItem("toggleState");
+  toggle.checked = savedToggleState === "true"; // Convertim string-ul la boolean
+
+  if (toggle.checked) {
+    quizCardTheme.setAttribute("href", "quiz-card-light.css");
+  } else {
+    quizCardTheme.setAttribute("href", "quiz-card.css");
+  }
+
+  toggle.addEventListener("change", function () {
+    if (toggle.checked) {
+      quizCardTheme.setAttribute("href", "quiz-card-light.css");
+      localStorage.setItem("quizCardTheme", "quiz-card-light.css");
+    } else {
+      quizCardTheme.setAttribute("href", "quiz-card.css");
+      localStorage.setItem("quizCardTheme", "quiz-card.css");
+    }
+
+    localStorage.setItem("toggleState", toggle.checked);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const username = localStorage.getItem("username");
-  const navbarRight = document.querySelector(".navbar-right");
   const scoreSpan = document.querySelector(".score");
 
-  if (username) {
-    const signInButton = document.getElementById("signin");
-    if (signInButton) {
-      signInButton.style.display = "none";
+  const userNameElement = document.getElementById("userName");
+  userNameElement.innerText = username;
 
-      scoreSpan.style.display = "inline-block";
-
-      let userScore = localStorage.getItem("userScore");
-
-      scoreSpan.textContent = `Score: ${userScore}`;
-      console.log(`Score: ${userScore}`);
-
-      signInButton.insertAdjacentHTML(
-        "beforebegin",
-        `<span id="userNavItem" class="nav-link">Welcome, ${username}</span>`
-      );
-
-      const signUpButton = document.querySelector(
-        ".user-info a[href='SignUp-Form.html']"
-      );
-      if (signUpButton) {
-        signUpButton.textContent = "Logout";
-        signUpButton.setAttribute("href", "#");
-        signUpButton.onclick = function () {
-          localStorage.removeItem("username");
-          localStorage.removeItem("userScore");
-          location.reload();
-        };
-      }
-    }
-  }
+  const scoreValue = document.querySelector(".score-value");
+  let userScore = localStorage.getItem("userScore");
+  scoreValue.textContent = userScore;
 });
+
+function toggleMenu() {
+  var element = document.getElementById("navbarRight");
+  if (element.classList.contains("active")) {
+    element.classList.remove("active");
+  } else {
+    element.classList.add("active");
+  }
+}

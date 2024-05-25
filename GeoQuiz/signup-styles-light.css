@@ -1,8 +1,168 @@
+body {
+    font-family: var(--text-font);
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navcolorlight);
+    color: black;
+    padding: 10px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-title {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--navcolorlight);
+    padding: 10px;
+}
+
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+}
+
+.homebutton {
+    color: black;
+    text-decoration: none;
+    font-style: normal;
+}
+
+
+.toggle-theme {
+    display: flex;
+    flex-direction: row;
+}
+
+.moon {
+    margin-right: 5px;
+}
+
+.sun {
+    margin-right: 10px
+}
+
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    margin-bottom: 3px;
+}
+
+.toggle-input {
+    display: none;
+    /* Ascunde input-ul original */
+}
+
+.toggle-label {
+    display: block;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-label::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.3s ease;
+}
+
+
+
+
+.toggle-input:checked+.toggle-label::after {
+    transform: translateX(20px);
+    /* Ajustăm transformarea pentru a mișca butonul de comutare la dreapta */
+}
+
+
+
+.dropdown-content a:hover {
+    color: var(--red);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.bi:hover,
+.homebutton:hover,
+.dropdown-title:hover,
+.nav-link:hover,
+.score:hover {
+    color: var(--yellow);
+}
+
+.user-info .nav-link:hover {
+    color: var(--yellow);
+
+}
+
+.nav-link {
+    color: black;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.score {
+    margin-left: 10px;
+    display: none;
+}
+
+
+.home {
+    margin-right: 10px;
+    text-decoration: none;
+
+
+}
+
 .container-signup {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--navcolorlight);
+    background-color: var(--mainbackgroundlight);
     height: 100vh;
     color: black
 }
@@ -18,7 +178,7 @@
     grid-template-columns: 1fr;
     gap: 10px;
     padding: 20px;
-    border: 1px solid #3e3c3c;
+    border: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: var(--buttonhoverlight);
@@ -35,10 +195,9 @@
 
 .form-content .input-field {
     padding: 8px;
-    border: 1px solid #d6c8c8;
+    border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 16px;
-    font-family: 'Times New Roman', Times, serif, Tahoma, Geneva, Verdana, sans-serif
 }
 
 .button {
@@ -71,4 +230,29 @@
 
 .signup-link a:hover {
     text-decoration: underline;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar-right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-right.active {
+        display: flex;
+    }
 }
