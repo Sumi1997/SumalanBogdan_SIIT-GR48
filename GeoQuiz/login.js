@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("username", username);
             localStorage.setItem("userId", userData.id);
             localStorage.setItem("userScore", userData.score);
-
             window.location.href = "mainpage.html";
           } else {
             const signupSection = document.getElementById("signupSection");

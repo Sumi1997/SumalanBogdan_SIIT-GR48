@@ -71,7 +71,6 @@ async function changeLanguage(lang) {
 }
 
 changeLanguage("en");
-
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("toggle");
   const signupTheme = document.getElementById("signupTheme");

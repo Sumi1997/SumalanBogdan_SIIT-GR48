@@ -325,6 +325,7 @@ input[type="radio"] {
     flex-direction: row;
 }
 
+
 @media (max-width: 480px) {
     .hamburger {
         display: block;
