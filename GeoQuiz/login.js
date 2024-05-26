@@ -2,18 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const apiUrlUsers = "http://localhost:3000/users";
 
   const loginForm = document.getElementById("loginForm");
-  loginForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+  loginForm.addEventListener("submit", function (event) {
+    event.preventDefault();
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", apiUrlUsers, true);
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          const data = JSON.parse(xhr.responseText);
+    const xml = new XMLHttpRequest();
+    xml.open("GET", apiUrlUsers, true);
+    xml.onreadystatechange = function () {
+      if (xml.readyState === XMLHttpRequest.DONE) {
+        if (xml.status === 200) {
+          const data = JSON.parse(xml.responseText);
           const authenticated = data.some(function (user) {
             return user.username === username && user.password === password;
           });
@@ -33,18 +33,17 @@ document.addEventListener("DOMContentLoaded", function () {
             signupSection.appendChild(errorMessage);
           }
         } else {
-          console.error("Request failed:", xhr.status);
+          console.error("Request failed:", xml.status);
         }
       }
     };
-    xhr.send();
+    xml.send();
   });
 });
 
 function updateContent(langData) {
   if (langData && Object.keys(langData).length) {
     document.querySelectorAll("[data-i18n]").forEach((element) => {
-      console.log(element, "html element in login page");
       const key = element.getAttribute("data-i18n");
       element.textContent = langData[key];
     });
@@ -52,38 +51,34 @@ function updateContent(langData) {
 }
 
 async function fetchLanguageData(lang) {
-  console.log(lang, "lang in fetchLangData");
   const response = await fetch(`languages/${lang}.json`);
   if (response.ok) {
     const langData = await response.json();
-    console.log(langData, "res.okk");
     return langData;
   } else {
-    console.error("Eroare la încărcarea datelor de limbă:", response.status);
+    console.error("Error at loaded language data", response.status);
   }
 }
 
 function setLanguagePreference(lang) {
   localStorage.setItem("language", lang);
-  console.log("Language preference set to:", lang);
 }
 
 async function changeLanguage(lang) {
-  console.log("selected language::", lang);
   setLanguagePreference(lang);
 
   const langData = await fetchLanguageData(lang);
   updateContent(langData);
 }
 
-changeLanguage("ro");
+changeLanguage("en");
 
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("toggle");
   const loginTheme = document.getElementById("loginTheme");
 
   const savedToggleState = localStorage.getItem("toggleState");
-  toggle.checked = savedToggleState === "true"; // Convertim string-ul la boolean
+  toggle.checked = savedToggleState === "true";
 
   if (toggle.checked) {
     loginTheme.setAttribute("href", "login-styles-light.css");

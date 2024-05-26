@@ -48,24 +48,28 @@
             </div>
         </div>
     </nav>
+    <h1 class="welcome" data-i18n="signIn.welcome.message">
+    </h1>
     <div class="container-login">
         <form class="login-form" id="loginForm">
-            <h2 class="login-title">LogIn</h2>
+            <h2 class="login-title" data-i18n="signIn.logIn"></h2>
+            <img src="geo-logo.png" class="title-image">
             <div class="form-content">
-                <label for="username">Username:</label>
+                <label for="username" data-i18n="signIn.username"></label>
                 <input type="text" id="username" name="username" class="input-field" required>
             </div>
             <div class="form-content">
-                <label for="password">Password:</label>
+                <label for="password" data-i18n="signIn.password"></label>
                 <input type="password" id="password" name="password" class="input-field" required>
             </div>
-            <button type="submit" class="button">LogIn</button>
+            <button type="submit" class="button" data-i18n="signIn.logIn"></button>
             <div class="signup" id="signupSection">
-                <p>Don't have an account? <a href="SignUp-Form.html">Sign Up</a></p>
+                <p data-i18n="signIn.account"></p>
+                <a href="SignUp-Form.html" data-i18n="signIn.account.signUp"></a>
             </div>
         </form>
+        <img src="signin.jpeg" class="login-image">
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="login.js"></script>
 
 </body>

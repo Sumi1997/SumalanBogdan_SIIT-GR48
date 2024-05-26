@@ -26,6 +26,8 @@
         "mainPage.phone": "Telefon: +1234567890",
         "signUp.signIn": "Logare",
         "signUp.signOut": "Inregistrare",
+        "signUp.signUp": "Inregistrare",
+
         "signUp.logIn": "Logare",
         "signUp.navScore": "Scor:",
         "signUp.welcome": "Salut, ",
@@ -36,7 +38,7 @@
         "signUp.title": "Inregistrare",
         "signUp.username": "Nume utilizator:",
         "signUp.email": "Email:",
-        "signUp.password": "Parola",
+        "signUp.password": "Parola:",
         "signUp.button":"Inregistrare",
         "signUp.account":"Ai deja un cont?",
         "signUp.account.logIn":"Logare",
@@ -51,10 +53,11 @@
         "signIn.home":"Acasa",
         "signIn.title": "Logare",
         "signIn.username": "Nume utilizator:",
-        "signIn.password": "Parola",
+        "signIn.password": "Parola:",
         "signIn.button":"Logare",
         "signIn.account":"Nu ai un cont?",
         "signIn.account.signUp":"Inregistrare",
+        "signIn.welcome.message":"Bine ati venit la GeoQuiz! Pregatiti-va pentru o experienta minunata!",
         "quizcard.signIn": "Logare",
         "quizcard.signOut": "Inregistrare",
         "quizcard.logIn": "Logare",
@@ -63,6 +66,12 @@
         "quizcard.language": "Limba",
         "quizcard.language.romanian": "Romana",
         "quizcard.language.english": "Engleza",
-        "quizcard.home": "Acasa"
+        "quizcard.home": "Acasa",
+        "quizCard.logout": "Delogare",
+        "quizcard.submit": "Trimite",
+        "quizcard.score": "Scor: 0"
+
+
+
     
     }

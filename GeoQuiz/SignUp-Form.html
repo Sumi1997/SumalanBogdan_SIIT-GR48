@@ -20,9 +20,6 @@
         </div>
         <button class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
         <div class="navbar-right" id="navbarRight">
-            <div class="home">
-                <i class="bi bi-house-door-fill"><a href="mainpage.html" class="homebutton">Home</a></i>
-            </div>
             <div class="toggle-theme">
                 <div class="moon">
                     <i class="fas fa-moon"></i>
@@ -39,37 +36,39 @@
             </div>
 
             <div class="dropdown">
-                <span data-i18n="mainPage.language" class="dropdown-title">Language</span>
+                <span data-i18n="mainPage.language" class="dropdown-title" data-i18n="signUp.language"></span>
                 <div class="dropdown-content">
-                    <a href="#" data-i18n="mainPage.language" onclick="changeLanguage('en')">English</a>
-                    <a href="#" onclick="changeLanguage('ro')">Romanian</a>
+                    <a href="#" data-i18n="mainPage.language.english" onclick="changeLanguage('en')"></a>
+                    <a href="#" onclick="changeLanguage('ro')" data-i18n="signUp.language.romanian"></a>
                 </div>
             </div>
             <div class=" user-info">
-                <span class="score">Score:</span>
-                <a href="LogIn-Form.html" class="nav-link" id="signin">Sign In</a>
-                <a href="SignUp-Form.html" class="nav-link">Sign Up</a>
+                <a href="LogIn-Form.html" class="nav-link" id="signin" data-i18n="signUp.signIn"></a>
+                <a href="SignUp-Form.html" class="nav-link" data-i18n="signUp.signUp"></a>
             </div>
         </div>
     </nav>
     <div class="container-signup">
         <form class="signup-form" id="signupForm">
-            <h2 class="signup-title">Sign Up</h2>
+            <h2 class="signup-title" data-i18n="signUp.signUp"></h2>
             <div class="form-content">
-                <label for="signup-username">Username:</label>
+                <label for="signup-username" data-i18n="signUp.username"></label>
                 <input type="text" id="signup-username" class="input-field" required>
             </div>
             <div class="form-content">
-                <label for="signup-email">Email:</label>
+                <label for="signup-email" data-i18n="signUp.email"></label>
                 <input type="email" id="signup-email" class="input-field" required>
             </div>
             <div class="form-content">
-                <label for="signup-password">Password:</label>
+                <label for="signup-password" data-i18n="signUp.password"></label>
                 <input type="password" id="signup-password" class="input-field" required>
             </div>
-            <button type="submit" class="button">Sign Up</button>
+            <button type="submit" class="button" data-i18n="signUp.signUp"></button>
             <div class="login-link">
-                <p>Already have an account? <a href="LogIn-Form.html">LogIn</a></p>
+                <p data-i18n="signUp.account">
+                </p>
+                <a href="LogIn-Form.html" data-i18n="signUp.signIn"></a>
+
             </div>
         </form>
     </div>

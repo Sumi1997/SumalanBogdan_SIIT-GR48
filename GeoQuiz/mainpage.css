@@ -129,6 +129,13 @@ body {
     margin-right: 10px;
 }
 
+.link-welcome {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+
 .user-info {
     display: flex;
     justify-content: space-between;
@@ -137,6 +144,7 @@ body {
 
 .score {
     margin-left: 10px;
+    margin-right: 10px;
 }
 
 
@@ -271,7 +279,12 @@ p {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+.user-info .user-welcome {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 480px) {
     .hamburger {
         display: block;
     }
@@ -280,9 +293,28 @@ p {
         display: none;
         flex-direction: column;
         width: 100%;
+
     }
 
     .navbar-right.active {
         display: flex;
+
     }
+
+    .user-info .span-score,
+    .user-info .user-welcome {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+
+
+    .navbar-right .user-info {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+
 }

@@ -45,12 +45,15 @@
                 </div>
             </div>
             <div class="user-info">
-                <span class="score" data-i18n="quizcard.navScore"></span>
-
-                <span class="score-value"></span>
-                <span id="userNavItem" class="nav-link" data-i18n="mainPage.welcome">Welcome, ${username}</span>
-                <span id="userName" class="nav-link"></span>
-                <a href="LogIn-Form.html" class="nav-link">Log Out</a>
+                <span class="span-score">
+                    <span class="score" data-i18n="quizcard.navScore"></span>
+                    <span class="score-value"></span>
+                </span>
+                <span class="user-welcome">
+                    <span id="userNavItem" class="nav-link" data-i18n="mainPage.welcome"></span>
+                    <span id="userName" class="welcome-nav"></span>
+                </span>
+                <a href="LogIn-Form.html" class="nav-link" data-i18n="quizCard.logout"></a>
             </div>
         </div>
     </nav>
@@ -58,7 +61,6 @@
     <div class="content">
         <a href="mainpage.html" class="back-button">
             &#8592;
-            <!-- HTML Entity for left arrow -->
         </a>
 
         <div class="quiz-card">
@@ -66,13 +68,13 @@
             <form id="options-form">
                 <div id="answersContainer"></div>
             </form>
-            <button id="submitBtn" class="quiz-button" onclick="submitAnswer()">
+            <button id="submitBtn" class="quiz-button" onclick="submitAnswer()" data-i18n="quizcard.submit">
                 Submit
             </button>
             <!-- <button id="reloadBtn" class="quiz-button" style="visibility: hidden" onclick="startNewQuiz()">
                 Start New Quiz
             </button> -->
-            <p id="score">Score: 0</p>
+            <p id="score" data-i18n="quizcard.score"></p>
             <p id="score-summary"></p>
         </div>
     </div>

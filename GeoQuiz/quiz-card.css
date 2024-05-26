@@ -1,6 +1,7 @@
 body {
     font-family: var(--text-font);
     height: 100%;
+    width: 100%;
     background-color: var(--mainbackground) !important;
 }
 
@@ -162,6 +163,12 @@ body {
     margin-left: 10px;
 }
 
+.welcome-nav {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
 .home {
     margin-right: 10px;
     text-decoration: none;
@@ -191,6 +198,7 @@ body {
     padding: 20px;
     text-align: center;
     width: 400px;
+    height: 500px;
     transition: transform 0.3s ease;
     margin: 20px auto;
 }
@@ -306,18 +314,46 @@ input[type="radio"] {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+.user-info .user-welcome {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 480px) {
     .hamburger {
         display: block;
     }
+
+
 
     .navbar-right {
         display: none;
         flex-direction: column;
         width: 100%;
+
     }
 
     .navbar-right.active {
         display: flex;
+
+    }
+
+    .user-info .span-score,
+    .user-info .user-welcome {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .quiz-card {
+        width: auto;
+    }
+
+
+
+    .navbar-right .user-info {
+        display: flex;
+        flex-direction: column;
+
     }
 }

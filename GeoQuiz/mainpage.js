@@ -10,31 +10,27 @@ function updateContent(langData) {
 }
 
 async function fetchLanguageData(lang) {
-  console.log(lang, "lang in fetchLangData");
   const response = await fetch(`languages/${lang}.json`);
   if (response.ok) {
     const langData = await response.json();
-    console.log(langData, "res.okk");
     return langData;
   } else {
-    console.error("Eroare la încărcarea datelor de limbă:", response.status);
+    console.error("Error at loading language data:", response.status);
   }
 }
 
 function setLanguagePreference(lang) {
   localStorage.setItem("language", lang);
-  console.log("Language preference set to:", lang);
 }
 
 async function changeLanguage(lang) {
-  console.log("selected language::", lang);
   setLanguagePreference(lang);
 
   const langData = await fetchLanguageData(lang);
   updateContent(langData);
 }
 
-changeLanguage("ro");
+changeLanguage("en");
 
 function chooseDifficulty() {
   var difficultySection = document.getElementById("difficultySection");
@@ -83,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("toggle");
   const changeTheme = document.getElementById("changeTheme");
 
-  // Setează starea checkbox-ului la încărcarea paginii
   const savedToggleState = localStorage.getItem("toggleState");
   toggle.checked = savedToggleState === "true"; // Convertim string-ul la boolean
 

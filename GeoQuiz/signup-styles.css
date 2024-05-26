@@ -185,7 +185,7 @@ body {
 .form-content .input-field {
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 20px;
     font-size: 16px;
 }
 
@@ -193,7 +193,7 @@ body {
     padding: 10px;
     color: #fff;
     border: none;
-    border-radius: 3px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
     color: black;
@@ -205,6 +205,12 @@ body {
 
 .signup-link {
     margin-top: 20px;
+}
+
+.login-link {
+    display: flex;
+    flex: row;
+    justify-content: space-between;
 }
 
 .signup-link p {

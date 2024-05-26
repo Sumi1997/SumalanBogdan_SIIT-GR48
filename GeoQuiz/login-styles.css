@@ -1,6 +1,6 @@
 body {
     font-family: var(--text-font);
-
+    background-color: var(--mainbackground) !important;
 
 }
 
@@ -78,7 +78,6 @@ body {
 
 .toggle-input {
     display: none;
-    /* Ascunde input-ul original */
 }
 
 .toggle-label {
@@ -108,7 +107,6 @@ body {
 
 .toggle-input:checked+.toggle-label::after {
     transform: translateX(20px);
-    /* Ajustăm transformarea pentru a mișca butonul de comutare la dreapta */
 }
 
 
@@ -160,13 +158,40 @@ body {
 
 }
 
-.container-login {
+.welcome {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    text-align: center;
+    padding-top: 70px;
     background-color: var(--mainbackground);
+    color: white
+}
+
+.welcome:hover {
+    color: var(--red)
+}
+
+.container-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 50px auto;
+    max-width: 960px;
+    padding: 20px;
+}
+
+.login-form,
+.login-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.login-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    opacity: var(--opacity2);
 }
 
 .login-form {
@@ -201,9 +226,19 @@ body {
 .form-content .input-field {
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 20px;
     font-size: 16px;
 }
+
+.title-image {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 
 .button {
     padding: 10px;
@@ -212,6 +247,7 @@ body {
     border-radius: 3px;
     cursor: pointer;
     font-size: 16px;
+    border-radius: 20px;
 
 }
 
@@ -221,9 +257,17 @@ body {
     border-color: #2d2929cc
 }
 
+.signup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .signup-link a {
+    display: flex;
     color: var(--red);
     text-decoration: none;
+
 
 }
 
@@ -235,15 +279,19 @@ body {
 .hamburger {
     display: none;
     font-size: 30px;
-    /* Ajustează dimensiunea iconiței dacă este necesar */
     background: none;
     border: none;
     color: white;
-    /* Ajustează culoarea dacă este necesar */
     cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 10px;
 }
 
-@media (max-width: 768px) {
+.hamburger:hover {
+    color: var(--red);
+}
+
+@media (max-width: 480px) {
     .hamburger {
         display: block;
     }
@@ -253,14 +301,29 @@ body {
         flex-direction: column;
         width: 100%;
         background-color: var(--navcolor);
-        /* Asigură-te că se potrivește cu navbar-ul */
         position: absolute;
         top: 50px;
-        /* Ajustează în funcție de înălțimea navbar-ului */
         left: 0;
     }
 
     .navbar-right.active {
         display: flex;
+        margin-bottom: 30px;
+    }
+
+    .navbar-right .user-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-login {
+        grid-template-columns: 1fr;
+        padding: 0px 70px 0px 70px;
+        justify-content: center;
+    }
+
+
+    .login-form {
+        order: -1;
     }
 }

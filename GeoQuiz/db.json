@@ -59,7 +59,7 @@
       "username": "popion",
       "email": "popion@gmail.ro",
       "password": "popion",
-      "score": 20580,
+      "score": 20595,
       "usertype": "user"
     },
     {
@@ -67,7 +67,7 @@
       "username": "biancazmole",
       "email": "biancazmole@gmail.ro",
       "password": "parola123",
-      "score": 0,
+      "score": 135,
       "usertype": "user"
     },
     {
@@ -125,6 +125,14 @@
       "password": "parola123",
       "usertype": "user",
       "score": 1
+    },
+    {
+      "id": "de3e",
+      "username": "mircea12",
+      "email": "mircea12@yahoo.com",
+      "password": "parola123",
+      "score": 0,
+      "usertype": "user"
     }
   ],
   "questions": [

@@ -34,18 +34,16 @@ async function fetchLanguageData(lang) {
 
 function setLanguagePreference(lang) {
   localStorage.setItem("language", lang);
-  console.log("Language preference set to:", lang);
 }
 
 async function changeLanguage(lang) {
-  console.log("selected language::", lang);
   setLanguagePreference(lang);
 
   const langData = await fetchLanguageData(lang);
   updateContent(langData);
 }
 
-changeLanguage("ro");
+changeLanguage("en");
 
 function getSelectedDifficulty() {
   return localStorage.getItem("selectedDifficulty");
@@ -61,13 +59,13 @@ function shuffleArray(array) {
 
 function fetchQuestions() {
   const difficulty = getSelectedDifficulty();
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", `${apiUrlQuestions}?difficulty=${difficulty}`);
+  const xml = new XMLHttpRequest();
+  xml.open("GET", `${apiUrlQuestions}?difficulty=${difficulty}`);
 
-  xhr.onload = function () {
-    if (xhr.status === 200) {
+  xml.onload = function () {
+    if (xml.status === 200) {
       try {
-        const response = JSON.parse(xhr.responseText);
+        const response = JSON.parse(xml.responseText);
         if (Array.isArray(response) && response.length > 0) {
           questions = response;
           questions = shuffleArray(questions).slice(0, NUM_QUESTIONS);
@@ -79,11 +77,11 @@ function fetchQuestions() {
         console.error("Eroare la parsarea răspunsului JSON:", error);
       }
     } else {
-      console.error("Eroare la încărcarea întrebărilor:", xhr.status);
+      console.error("Eroare la încărcarea întrebărilor:", xml.status);
     }
   };
 
-  xhr.send();
+  xml.send();
 }
 function loadQuestion(questionData) {
   const questionElement = document.getElementById("question");
@@ -93,7 +91,6 @@ function loadQuestion(questionData) {
   answersElement.innerText = "";
   const shuffledAnswers = shuffleArray(questionData.possibleAnswers);
   currentCorrectAnswer = questionData.correctAnswer;
-  console.log(shuffledAnswers, "shuffled qqqqq");
 
   shuffledAnswers.forEach((question, index) => {
     answersElement.insertAdjacentHTML(
@@ -171,20 +168,28 @@ function submitAnswer() {
     loadQuestion(questions[currentQuestionIndex]);
   } else {
     const scoreSummaryElement = document.getElementById("score-summary");
+    const currentLanguage = localStorage.getItem("language");
 
-    scoreSummaryElement.textContent = `Felicitari! Scor final: ${currentScore}`;
-
+    if (currentLanguage === "ro") {
+      scoreSummaryElement.textContent = `Felicitări! Scor final: ${currentScore}`;
+    } else {
+      scoreSummaryElement.textContent = `Congratulations! Final Score: ${currentScore}`;
+    }
     document.getElementById("submitBtn").style.display = "none";
-    // document.getElementById("reloadBtn").style.display = "block";
     updateScoreInDatabase();
   }
 }
 
 function incrementScore(points) {
   const scoreElement = document.getElementById("score");
+  const currentLanguage = localStorage.getItem("language");
 
   currentScore += points;
-  scoreElement.textContent = `Score: ${currentScore}`;
+  if (currentLanguage === "ro") {
+    scoreElement.textContent = `Scor: ${currentScore}`;
+  } else {
+    scoreElement.textContent = `Score: ${currentScore}`;
+  }
 }
 
 // function startNewQuiz() {
@@ -195,54 +200,24 @@ document.addEventListener("DOMContentLoaded", fetchQuestions);
 
 function updateScoreInDatabase() {
   const userId = localStorage.getItem("userId");
-  const xhrPatch = new XMLHttpRequest();
-  xhrPatch.open("PATCH", `http://localhost:3000/users/${userId}`, true);
-  xhrPatch.setRequestHeader("Content-Type", "application/json");
-  xhrPatch.onload = function () {
-    if (xhrPatch.status === 200) {
+  const xmlPatch = new XMLHttpRequest();
+  xmlPatch.open("PATCH", `http://localhost:3000/users/${userId}`, true);
+  xmlPatch.setRequestHeader("Content-Type", "application/json");
+  xmlPatch.onload = function () {
+    if (xmlPatch.status === 200) {
       console.log("Scorul a fost actualizat cu succes în baza de date!");
     } else {
-      console.error("Eroare la actualizarea scorului:", xhrPatch.statusText);
+      console.error("Eroare la actualizarea scorului:", xmlPatch.statusText);
     }
   };
-  xhrPatch.onerror = function () {
+  xmlPatch.onerror = function () {
     console.error("Eroare la conexiune!");
   };
 
-  // Actualizează scorul în localStorage
   let previousScore = localStorage.getItem("userScore");
   const newScore = +previousScore + currentScore;
   localStorage.setItem("userScore", newScore);
-  xhrPatch.send(JSON.stringify({ score: newScore }));
-
-  // const username = localStorage.getItem("username");
-  // const userId = localStorage.getItem("userId");
-
-  // if (!username) {
-  //   console.error("Utilizatorul curent nu este setat în localStorage!");
-  //   return;
-  // }
-
-  // const xhrGet = new XMLHttpRequest();
-  // xhrGet.open("GET", `http://localhost:3000/users/${userId}`, true);
-  // xhrGet.onload = function () {
-  //   if (xhrGet.status === 200) {
-  //     const user = JSON.parse(xhrGet.responseText);
-  //     console.log(user, "userrrrrrrrrr");
-  //     const previousScore = user.score;
-  //     const newScore = previousScore + currentScore;
-
-  //   } else {
-  //     console.error(
-  //       "Eroare la obținerea scorului existent:",
-  //       xhrGet.statusText
-  //     );
-  //   }
-  // };
-  // xhrGet.onerror = function () {
-  //   console.error("Eroare la conexiune la obținerea scorului!");
-  // };
-  // xhrGet.send();
+  xmlPatch.send(JSON.stringify({ score: newScore }));
 }
 
 function reloadPage() {
