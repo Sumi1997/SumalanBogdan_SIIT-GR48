@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const changeTheme = document.getElementById("changeTheme");
 
   const savedToggleState = localStorage.getItem("toggleState");
-  toggle.checked = savedToggleState === "true"; // Convertim string-ul la boolean
+  toggle.checked = savedToggleState === "true";
 
   if (toggle.checked) {
     changeTheme.setAttribute("href", "mainpage-light.css");

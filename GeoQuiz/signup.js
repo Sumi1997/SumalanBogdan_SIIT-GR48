@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const signupTheme = document.getElementById("signupTheme");
 
   const savedToggleState = localStorage.getItem("toggleState");
-  toggle.checked = savedToggleState === "true"; // Convertim string-ul la boolean
+  toggle.checked = savedToggleState === "true";
 
   if (toggle.checked) {
     signupTheme.setAttribute("href", "signup-styles-light.css");

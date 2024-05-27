@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const quizCardTheme = document.getElementById("quizCardTheme");
 
   const savedToggleState = localStorage.getItem("toggleState");
-  toggle.checked = savedToggleState === "true"; // Convertim string-ul la boolean
+  toggle.checked = savedToggleState === "true";
 
   if (toggle.checked) {
     quizCardTheme.setAttribute("href", "quiz-card-light.css");

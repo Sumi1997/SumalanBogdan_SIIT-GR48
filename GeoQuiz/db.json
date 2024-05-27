@@ -1,123 +1,6 @@
 {
   "users": [
-    {
-      "username": "bogdansumalan",
-      "id": "1A",
-      "email": "bogdan.sumalan@yahoo.com",
-      "password": "parola123",
-      "usertype": "user",
-      "score": 0
-    },
-    {
-      "username": "popescu.ion",
-      "id": "1B",
-      "email": "popescu.ion@gmail.ro",
-      "password": "password123",
-      "usertype": "user",
-      "score": 0
-    },
-    {
-      "username": "mariapop",
-      "id": "1C",
-      "email": "pop.maria@gmail.ro",
-      "password": "parolamea123",
-      "usertype": "user",
-      "score": 0
-    },
-    {
-      "id": "xx",
-      "username": "tesllt",
-      "email": "test",
-      "password": "test",
-      "usertype": "user",
-      "score": 0
-    },
-    {
-      "id": "20f5",
-      "username": "tesllt",
-      "email": "test",
-      "password": "test"
-    },
-    {
-      "id": "cbdf",
-      "username": "test",
-      "email": "test@test.ro",
-      "password": "test",
-      "score": 0,
-      "usertype": "user"
-    },
-    {
-      "id": "9055",
-      "username": "ionpop",
-      "email": "ionpop@gmail.ro",
-      "password": "ionpop123",
-      "score": 0,
-      "usertype": "user"
-    },
-    {
-      "id": "f96e",
-      "username": "popion",
-      "email": "popion@gmail.ro",
-      "password": "popion",
-      "score": 20595,
-      "usertype": "user"
-    },
-    {
-      "id": "cdab",
-      "username": "biancazmole",
-      "email": "biancazmole@gmail.ro",
-      "password": "parola123",
-      "score": 135,
-      "usertype": "user"
-    },
-    {
-      "id": "b88e",
-      "username": "test1",
-      "email": "test@test.ro",
-      "password": "test",
-      "score": 0,
-      "usertype": "user"
-    },
-    {
-      "id": "8102",
-      "username": "aaaaa",
-      "email": "aaaaa@aaaaaaa.vom",
-      "password": "aaaaa",
-      "score": 0,
-      "usertype": "user"
-    },
-    {
-      "id": "4bc5",
-      "username": "bbb",
-      "email": "bbb@bbb",
-      "password": "bbbb",
-      "score": 0,
-      "usertype": "user"
-    },
-    {
-      "id": "1f4a",
-      "username": "bbbb",
-      "email": "bbbbb@bbb",
-      "password": "bbbb",
-      "score": 0,
-      "usertype": "user"
-    },
-    {
-      "id": "0472",
-      "username": "nnnn",
-      "email": "nnnnn1@asdasd",
-      "password": "nnnnn",
-      "score": 0,
-      "usertype": "user"
-    },
-    {
-      "id": "0fa1",
-      "username": "bbbb",
-      "email": "bbbb@bnbb",
-      "password": "bbbb",
-      "score": 0,
-      "usertype": "user"
-    },
+  
     {
       "id": "1A",
       "username": "bogdansumalan",
@@ -132,6 +15,14 @@
       "email": "mircea12@yahoo.com",
       "password": "parola123",
       "score": 0,
+      "usertype": "user"
+    },
+    {
+      "id": "0ac4",
+      "username": "Bianca Zmole",
+      "email": "eu_bia98@yahoo.com",
+      "password": "Anaaremere1.",
+      "score": 70,
       "usertype": "user"
     }
   ],

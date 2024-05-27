@@ -107,7 +107,6 @@ body {
 
 .toggle-input:checked+.toggle-label::after {
     transform: translateX(20px);
-    /* Ajustăm transformarea pentru a mișca butonul de comutare la dreapta */
 }
 
 
