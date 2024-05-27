@@ -18,23 +18,23 @@ document.addEventListener("DOMContentLoaded", function () {
       usertype: "user",
     };
 
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", apiUrlUsers);
-    xhr.setRequestHeader("Content-Type", "application/json");
+    const xml = new XMLHttpRequest();
+    xml.open("POST", apiUrlUsers);
+    xml.setRequestHeader("Content-Type", "application/json");
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 201) {
+    xml.onreadystatechange = function () {
+      if (xml.readyState === XMLHttpRequest.DONE) {
+        if (xml.status === 201) {
           console.log("Utilizatorul a fost adăugat cu succes!");
           window.location.href = "LogIn-Form.html";
         } else {
-          console.error("Eroare la adăugarea utilizatorului:", xhr.status);
-          console.error("Răspuns:", xhr.responseText);
+          console.error("Eroare la adăugarea utilizatorului:", xml.status);
+          console.error("Răspuns:", xml.responseText);
         }
       }
     };
 
-    xhr.send(JSON.stringify(newUser));
+    xml.send(JSON.stringify(newUser));
   });
 });
 
@@ -70,7 +70,15 @@ async function changeLanguage(lang) {
   updateContent(langData);
 }
 
-changeLanguage("en");
+document.addEventListener("DOMContentLoaded", function () {
+  const savedLanguage = localStorage.getItem("language");
+  if (savedLanguage) {
+    changeLanguage(savedLanguage);
+  } else {
+    changeLanguage("en");
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("toggle");
   const signupTheme = document.getElementById("signupTheme");

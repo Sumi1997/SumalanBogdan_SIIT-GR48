@@ -70,7 +70,14 @@ async function changeLanguage(lang) {
   updateContent(langData);
 }
 
-changeLanguage("en");
+document.addEventListener("DOMContentLoaded", function () {
+  const savedLanguage = localStorage.getItem("language");
+  if (savedLanguage) {
+    changeLanguage(savedLanguage);
+  } else {
+    changeLanguage("en");
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("toggle");

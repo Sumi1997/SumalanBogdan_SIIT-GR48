@@ -1,6 +1,5 @@
 {
   "users": [
-  
     {
       "id": "1A",
       "username": "bogdansumalan",
@@ -14,7 +13,7 @@
       "username": "mircea12",
       "email": "mircea12@yahoo.com",
       "password": "parola123",
-      "score": 0,
+      "score": 50,
       "usertype": "user"
     },
     {
@@ -23,6 +22,22 @@
       "email": "eu_bia98@yahoo.com",
       "password": "Anaaremere1.",
       "score": 70,
+      "usertype": "user"
+    },
+    {
+      "id": "d44d",
+      "username": "test",
+      "email": "test@test.ro",
+      "password": "test",
+      "score": 50,
+      "usertype": "user"
+    },
+    {
+      "id": "a47a",
+      "username": "andrei",
+      "email": "andrei@andrei",
+      "password": "andrei",
+      "score": 10,
       "usertype": "user"
     }
   ],
